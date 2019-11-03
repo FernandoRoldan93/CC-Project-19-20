@@ -12,9 +12,9 @@ Este sistema se implementará siguiendo una arquitectura basada en microservicio
 ## Microservicios
 Para definir los diferentes microservicios podemos fijarnos en el analisis de las diferentes entidades obtenidas a partir de un analisis basado en el diseño guiado por el dominio (DDD, [Domain-Driven Design](en.wikipedia.org/wiki/Domain-driven_design)). Los diferentes microservicios que obtenemos de este análisis son: 
 
-* BikeManager: Este microservicio será el encargado de implementar todas las funciones relacionadas con la entidad "bicicleta".
+* `BikeManager`: Este microservicio será el encargado de implementar todas las funciones relacionadas con la entidad "bicicleta".
 
-* StationManager: Este microservicio será el encargado de gestionar la entrada y salida de bicicletas en la estación. Ademas de esto tambien se encargará de informar del numero de puestos libres y bicicletas disponibles en una estación especifica.
+* `StationManager`: Este microservicio será el encargado de gestionar la entrada y salida de bicicletas en la estación. Ademas de esto tambien se encargará de informar del numero de puestos libres y bicicletas disponibles en una estación especifica.
 
 ## Servicios
 Ademas de los microservicios anteriormente mencionados se incluiran varios servicios que serán de utilidad para gestionar el sistema.
