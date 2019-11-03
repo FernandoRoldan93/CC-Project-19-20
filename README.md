@@ -10,7 +10,7 @@ Se propone desarrollar un sistema llamado "CityByke", este sistema consiste en u
 Este sistema se implementará siguiendo una arquitectura basada en microservicios. Se elige esta arquitectura debido al caracter del problema donde la lógica de negocio se encuentra bien separada. Ademas de esto, esta arquitectura nos aportara una serie de ventajas con respecto a la arquitectura monolitica, como puede ser, entre otras, que los cambios en los distintos microservicios no afectan al resto, pudiendo hacer actualizaciones en dichos microservicios de forma mas sencilla.
 
 ## Microservicios
-Para definir los diferentes microservicios podemos fijarnos en el analisis de las diferentes entidades obtenidas a partir de un analisis basado en el diseño guiado por el dominio (DDD, [Domain-Driven Design](en.wikipedia.org/wiki/Domain-driven_design)). Los diferentes microservicios que obtenemos de este análisis son: 
+Para definir los diferentes microservicios podemos fijarnos en el analisis de las diferentes entidades obtenidas a partir de un [analisis](https://github.com/FernandoRoldan93/CC-Project/blob/master/doc/DDD_analisis.md) basado en el diseño guiado por el dominio (DDD, [Domain-Driven Design](en.wikipedia.org/wiki/Domain-driven_design)). Los diferentes microservicios que obtenemos de este análisis son: 
 
 * `BikeManager`: Este microservicio será el encargado de implementar todas las funciones relacionadas con la entidad "bicicleta".
 
