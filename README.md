@@ -11,7 +11,7 @@ Este sistema se implementará siguiendo una arquitectura basada en microservicio
 
 Por otra parte, se ha realizado un estudio de las diferentes entidades que formaran parte de este problema. Estas entidades surgen del [análisis](https://github.com/FernandoRoldan93/CC-Project/blob/master/doc/DDD_analisis.md) basado en el diseño guiado por el dominio (DDD, [Domain-Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design)).
 
-Hay que destacar que el lenguaje que se utilizará para la realización de este proyecto, será [Python](https://www.python.org/) por la gran cantidad de facilidades que nos ofrece en cuanto a modulos y a herramientas se refiere.
+Hay que destacar que el lenguaje que se utilizará para la realización de este proyecto, será [Python](https://www.python.org/) por la gran cantidad de facilidades que nos ofrece en cuanto a módulos y a herramientas se refiere.
 
 ## Herramienta de construcción
 

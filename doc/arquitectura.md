@@ -1,4 +1,4 @@
-#Arquitectura del proyecto.
+# Arquitectura del proyecto.
 
 Se elige esta arquitectura debido al carácter del problema donde la lógica de negocio se encuentra bien separada debido a esto podemos diferenciar dos entidades que pueden trabajar independientemente la una de las otra. Estas entidades surgen del [análisis](https://github.com/FernandoRoldan93/CC-Project/blob/master/doc/DDD_analisis.md) basado en el diseño guiado por el dominio (DDD, [Domain-Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design)).
 
