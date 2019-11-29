@@ -1,14 +1,14 @@
 language: python
 python:
-     - "3.5"
-     - "3.6"
-     - "3.7"
+  - "3.5"
+  - "3.6"
+  - "3.7"
 before_install:
-   - pipenv install --three
-   - pipenv run pip install -r requirements.txt
+  - pipenv install --three
+  - pipenv run pip install -r requirements.txt
 script:
-   - pipenv run python -m pytest test/test_bicicletas.py
-   - pipenv run python -m pytest --cov=estacion test/
-   -	pipenv run python -m pytest --cov=bicicletas test/
+  - pipenv run python -m pytest test/test_bicicletas.py
+  - pipenv run python -m pytest --cov=estacion test/
+  -	pipenv run python -m pytest --cov=bicicletas test/
 after_success:
-   - codecov
+  - codecov
