@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-Editor de Spyder
-
-Este es un archivo temporal.
+@author: Fernando Roldán  
 """
 
 class Bicicleta:
     def __init__(self, id, fecha_alta, ultimos_usuarios):
-        self.id = id
-        self.fecha_alta = fecha_alta
-        self.__disponible = True
-        self.__ocupada = False
-        self.__ultimos_usuarios = [None]
+        if id == None or id == "" or fecha_alta == None or fecha_alta == "":
+            return "Datos no validos"
+        else:
+            self.id = id
+            self.fecha_alta = fecha_alta
+            self.__disponible = True
+            self.__ocupada = False
+            self.__ultimos_usuarios = [None]
 
     def set_ocupada(self, ocupada):
         if self.__ocupada == ocupada:
@@ -24,17 +25,20 @@ class Bicicleta:
         return self.__ocupada
 
     def add_ultimo_usuario(self, usuario):
-        self.__ultimos_usuarios.append()
-        return "Añadido usuario al registro de la bicicleta"
-
+        if usuario == "" or usuario == None:
+            return "Se ha de especificar un usuario"
+        else:
+            self.__ultimos_usuarios.append()
+            return "Añadido usuario al registro de la bicicleta"
+    
     def get_ultimos_usuarios(self):
         return self.__ultimos_usuarios
 
     def set_disponible(self, disponible):
-        if self.__disponible == ocupada:
+        if self.__disponible == True:
             return "Esta bicicleta ya se encuentra en el estado que quieres asignar "
         else:
-            self.__disponible = ocupada
+            self.__disponible = True
             return "Estado cambiado correctamente :D"
 
     def get_disponible(self):
