@@ -4,16 +4,19 @@
 """
 
 class Bicicleta:
-    def __init__(self, id, fecha_alta, ultimos_usuarios):
-        if id == None or id == "" or fecha_alta == None or fecha_alta == "":
-            return "Datos no validos"
-        else:
+    def __init__(self, id, fecha_alta):
             self.id = id
             self.fecha_alta = fecha_alta
             self.__disponible = True
             self.__ocupada = False
             self.__ultimos_usuarios = [None]
 
+    def datos_correctos(self):
+        if self.id == None or self.fecha_alta == None:
+            return False
+        else:
+            return True
+        
     def set_ocupada(self, ocupada):
         if self.__ocupada == ocupada:
             return "Esta bicicleta ya se encuentra en el estado que quieres asignar "
@@ -28,7 +31,7 @@ class Bicicleta:
         if usuario == "" or usuario == None:
             return "Se ha de especificar un usuario"
         else:
-            self.__ultimos_usuarios.append()
+            self.__ultimos_usuarios.append(usuario)
             return "Añadido usuario al registro de la bicicleta"
     
     def get_ultimos_usuarios(self):

@@ -6,15 +6,17 @@
 from bicicletas import Bicicleta
 class Estacion:
     def __init__(self, id, direccion, nPuestos):
-        if id == None or id == "" or direccion == None or direccion == "" or nPuestos <= 0:
-            return "Datos no validos"
-        else:
             self.__id = id
             self.direccion = direccion
-            self.__nPuestos = n_puestos
+            self.__nPuestos = nPuestos
             self.puestos_libres = self.__nPuestos
             self.bicicletas_estacionadas = {}
         
+    def datos_correctos(self):
+        if self.id == None or self.direccion == None or self.__nPuestos <= 0 or self.__nPuestos == None:
+            return False
+        else:
+            return True
 
     def get_id(self):
         return self.__id
