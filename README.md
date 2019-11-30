@@ -1,5 +1,7 @@
 # Proyecto para la asignatura de Cloud Computing (UGR)
-
+[![Build Status](https://travis-ci.org/FernandoRoldan93/CC-Project.svg?branch=master)](https://travis-ci.org/FernandoRoldan93/CC-Project)
+[![codecov](https://codecov.io/gh/FernandoRoldan93/CC-Project/branch/master/graph/badge.svg)](https://codecov.io/gh/FernandoRoldan93/CC-Project)
+[![CircleCI](https://circleci.com/gh/FernandoRoldan93/CC-Project.svg?style=svg)](https://circleci.com/gh/FernandoRoldan93/CC-Project)
 ### Autor: Fernando Roldán Zafra
 
 ## Descripción:
@@ -15,6 +17,6 @@ Hay que destacar que el lenguaje que se utilizará para la realización de este 
 
 ## Herramienta de construcción
 
-Como herramienta de construcción utilizaremos la ampliamente conocida (make)[https://www.gnu.org/software/make/]. Esta herramienta nos permitira a traves del fichero (Makefile)[./Makefile] realizar varias opciones de forma automatica. Para este proposito se han definido 2 comandos que se ejecutaran utilizando las siguientes ordenes:
+Como herramienta de construcción utilizaremos la ampliamente conocida [make](https://www.gnu.org/software/make/). Esta herramienta nos permitirá, a traves del fichero [Makefile](./Makefile), realizar varias opciones de forma automatica. Para este proposito se han definido 2 comandos que se ejecutaran utilizando las siguientes ordenes:
 `make install` o `make`: Cualquiera de estas dos ordenes crearan un entorno virtual de Python e instalarán en el las dependencias necesarias.
 `make test`: En este caso, este comando nos permitirá realizar todos los test desarrollados.
