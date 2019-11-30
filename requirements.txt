@@ -1,2 +1,4 @@
+pytest
+pipenv
 pytest-cov
 codecov
