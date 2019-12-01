@@ -25,6 +25,8 @@ Como herramienta de construcción utilizaremos la ampliamente conocida [make](ht
 
 ## Tests y herramientas de integración continua
 
+  buildtool: Makefile
+
 Para poder llevar un correcto control del proyecto se han desarrollado varios tests sobre los microservicios implementados. Esto permitirá comprobar que el sistema funciona correctamente después de realizar algún cambio. Para realizar estas comprobaciones se ha elegido utilizar el método de integración continua en la nube. De esta forma se crearan entornos virtuales en la nube donde se ejecutará el sistema en varias versiones de Python.
 
 Las herramientas de integración continua que se han utilizado son [travis](https://travis-ci.org/) y [CircleCI](https://circleci.com/). Se han elegido debido al conocimiento sobre travis del que ya disponía y debido a la facilidad que ambas nos ofrecen.
