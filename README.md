@@ -17,6 +17,8 @@ Hay que destacar que el lenguaje que se utilizará para la realización de este 
 
 ## Herramienta de construcción
 
+    buildtool: Makefile
+
 Como herramienta de construcción utilizaremos la ampliamente conocida [make](https://www.gnu.org/software/make/). Esta herramienta nos permitirá, a través del fichero [Makefile](./Makefile), realizar varias opciones de forma automática. Para este propósito se han definido 2 comandos que se ejecutaran utilizando las siguientes ordenes:
 
 `make install` o `make`: Cualquiera de estas dos ordenes crearan un entorno virtual de Python e instalarán en el las dependencias necesarias.
@@ -24,8 +26,6 @@ Como herramienta de construcción utilizaremos la ampliamente conocida [make](ht
 `make test`: En este caso, este comando nos permitirá realizar todos los tests desarrollados.
 
 ## Tests y herramientas de integración continua
-
-  buildtool: Makefile
 
 Para poder llevar un correcto control del proyecto se han desarrollado varios tests sobre los microservicios implementados. Esto permitirá comprobar que el sistema funciona correctamente después de realizar algún cambio. Para realizar estas comprobaciones se ha elegido utilizar el método de integración continua en la nube. De esta forma se crearan entornos virtuales en la nube donde se ejecutará el sistema en varias versiones de Python.
 
