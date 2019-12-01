@@ -17,6 +17,16 @@ Hay que destacar que el lenguaje que se utilizará para la realización de este 
 
 ## Herramienta de construcción
 
-Como herramienta de construcción utilizaremos la ampliamente conocida [make](https://www.gnu.org/software/make/). Esta herramienta nos permitirá, a traves del fichero [Makefile](./Makefile), realizar varias opciones de forma automatica. Para este proposito se han definido 2 comandos que se ejecutaran utilizando las siguientes ordenes:
+Como herramienta de construcción utilizaremos la ampliamente conocida [make](https://www.gnu.org/software/make/). Esta herramienta nos permitirá, a través del fichero [Makefile](./Makefile), realizar varias opciones de forma automática. Para este propósito se han definido 2 comandos que se ejecutaran utilizando las siguientes ordenes:
+
 `make install` o `make`: Cualquiera de estas dos ordenes crearan un entorno virtual de Python e instalarán en el las dependencias necesarias.
-`make test`: En este caso, este comando nos permitirá realizar todos los test desarrollados.
+
+`make test`: En este caso, este comando nos permitirá realizar todos los tests desarrollados.
+
+## Tests y herramientas de integración continua
+
+Para poder llevar un correcto control del proyecto se han desarrollado varios tests sobre los microservicios implementados. Esto permitirá comprobar que el sistema funciona correctamente después de realizar algún cambio. Para realizar estas comprobaciones se ha elegido utilizar el método de integración continua en la nube. De esta forma se crearan entornos virtuales en la nube donde se ejecutará el sistema en varias versiones de Python.
+
+Las herramientas de integración continua que se han utilizado son [travis](https://travis-ci.org/) y [CircleCI](https://circleci.com/). Se han elegido debido al conocimiento sobre travis del que ya disponía y debido a la facilidad que ambas nos ofrecen.
+
+Por otro lado, también se ha integrado una herramienta de cobertura de código, esta es [codecov](https://codecov.io/). Esta herramienta nos permitirá comprobar cual es el porcentaje de código cubierto por nuestros tests.
