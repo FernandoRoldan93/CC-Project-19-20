@@ -5,7 +5,7 @@
 ### Autor: Fernando Roldán Zafra
 
 ## Descripción:
-Se propone desarrollar un sistema llamado "CityByke", este sistema consiste en un sistema de gestión de bicicletas de alquiler en la ciudad. En este sistema un gestor podrá organizar todo lo relacionado con el alquiler de las mismas a través de la nube.
+Se propone desarrollar un sistema llamado "CityBike", este sistema consiste en un sistema de gestión de bicicletas de alquiler en la ciudad. En este sistema un gestor podrá organizar todo lo relacionado con el alquiler de las mismas a través de la nube.
 
 ## Arquitectura
 
