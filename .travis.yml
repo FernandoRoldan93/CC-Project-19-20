@@ -1,14 +1,21 @@
+# Especificamos el lenguaje
 language: python
+# Especificamos las versiones en las cuales se realizarán los test.
 python:
  - "3.5"
  - "3.6"
  - "3.7"
-before_install:
- - pipenv install --three
- - pipenv run pip install -r requirements.txt
+ - "3.8"
+
+# Instalamos las dependencias necesarias para la realización de los test mediante
+# la herramienta de construcción
+install:
+ - make install
+
+# Ejecución de los test y test de cobertura mediante la herramienta de construcción
 script:
- - pipenv run python -m pytest tests/test_bicicletas.py
- - pipenv run python -m pytest --cov=estacion tests/
- - pipenv run python -m pytest --cov=bicicletas tests/
+ make test
+
+#Tras la realización de los test de cobertura enviamos los resultados a codecov.
 after_success:
  - codecov
