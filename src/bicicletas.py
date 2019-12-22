@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: Fernando Roldán  
+@author: Fernando Roldán
 """
 
 class Bicicleta:
@@ -11,12 +11,6 @@ class Bicicleta:
             self.__ocupada = False
             self.__ultimos_usuarios = [None]
 
-    def datos_correctos(self):
-        if self.id == None or self.fecha_alta == None:
-            return False
-        else:
-            return True
-        
     def set_ocupada(self, ocupada):
         if self.__ocupada == ocupada:
             return "Esta bicicleta ya se encuentra en el estado que quieres asignar "
@@ -33,7 +27,7 @@ class Bicicleta:
         else:
             self.__ultimos_usuarios.append(usuario)
             return "Añadido usuario al registro de la bicicleta"
-    
+
     def get_ultimos_usuarios(self):
         return self.__ultimos_usuarios
 

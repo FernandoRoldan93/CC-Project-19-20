@@ -9,7 +9,6 @@ sys.path.append('src/')
 from bicicletas import Bicicleta
 from estacion import Estacion
 
-
 """ Test 1: Tras retirar una bicicleta, esta queda ocupada"""
 def test_bici_ocupada():
     bici = Bicicleta(1,2010)
@@ -17,7 +16,7 @@ def test_bici_ocupada():
     estac.depositar_bicicleta(bici)
     estac.retirar_bicicleta(bici, "Fernando")
     assert bici.get_ocupada() == True
-    
+
 
 """ Test 2: Para depositar una bicicleta en una estacion ha de haber huecos libres"""
 def test_depositar_bici():
@@ -58,4 +57,15 @@ def test_retirar_bicicleta_otra_estacion():
     estac = Estacion(1, "Gonzalo Gallas", 2)
     estac.depositar_bicicleta(bici)
     assert estac.retirar_bicicleta(bici1, "asd") == "La bicicleta no se encuentra en esta estación"
-    
+
+""" Test 7: Tras retirar una bicicleta, el usuario queda registrado."""
+
+def test_usuario_retira():
+    bici = Bicicleta(1,2010)
+    estac = Estacion(1, "Gonzalo Gallas", 2)
+    estac.depositar_bicicleta(bici)
+    usuario = "Fernando"
+    mensaje = estac.retirar_bicicleta(bici, usuario)
+    usuarios = bici.get_ultimos_usuarios()
+    print(mensaje)
+    assert usuarios[-1] == "Fernando"
