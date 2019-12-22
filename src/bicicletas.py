@@ -31,12 +31,5 @@ class Bicicleta:
     def get_ultimos_usuarios(self):
         return self.__ultimos_usuarios
 
-    def set_disponible(self, disponible):
-        if self.__disponible == True:
-            return "Esta bicicleta ya se encuentra en el estado que quieres asignar "
-        else:
-            self.__disponible = True
-            return "Estado cambiado correctamente :D"
-
     def get_disponible(self):
         return self.__disponible
