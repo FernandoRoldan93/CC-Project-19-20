@@ -21,6 +21,6 @@ Los ficheros de configuración de Travis y CircleCI se pueden consultar en los s
 1. [Fichero de configuración de Travis](../.travis.yml)
 2. [Fichero de configuración de CircleCI](../.circleci/config.yml)
 
-Además de lo anterior, también se ha utilizado una herramienta de cobertura de código. Estas herramientas nos permiten conocer cual es la cantidad de código que hemos cubierto con tests. Esto último nos llevará a tener un código más libre de errores y de mejor calidad (sin redundancias, por ejemplo). La herramienta que se utilizará por tanto es [codecov](https://codecov.io/).
+Además de lo anterior, también se ha utilizado una herramienta de cobertura de código. Estas herramientas nos permiten conocer cual es la cantidad de código que hemos cubierto con tests. Esto último nos llevará a tener un código más libre de errores y de mejor calidad (sin redundancias, por ejemplo). La herramienta que se utilizará por tanto es [codecov](https://codecov.io/) el cual nos proporciona un porcentaje de cobertura de código.
 
 El estado de la aplicación en las tres plataformas se puede comprobar en la cabecera del documento [README](../README.md), en este se han incluido los badges de las tres plataformas.

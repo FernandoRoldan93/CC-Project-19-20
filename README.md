@@ -2,23 +2,24 @@
 [![Build Status](https://travis-ci.org/FernandoRoldan93/CC-Project.svg?branch=master)](https://travis-ci.org/FernandoRoldan93/CC-Project)
 [![codecov](https://codecov.io/gh/FernandoRoldan93/CC-Project/branch/master/graph/badge.svg)](https://codecov.io/gh/FernandoRoldan93/CC-Project)
 [![CircleCI](https://circleci.com/gh/FernandoRoldan93/CC-Project.svg?style=svg)](https://circleci.com/gh/FernandoRoldan93/CC-Project)
+
 ### Autor: Fernando Roldán Zafra
 
-##Indice General
+## Indice General
 - [Entidades del sistema](./doc/DDD_analisis.md)
-- [Arquitectura ](./doc/arquitectura.md)
-- [Herramienta de construcción e integración continua](./doc/Buildtool_&_integracion_continua.md)
+- [Arquitectura](./doc/arquitectura.md)
+- [Herramienta de construcción e integración continua](./doc/buildtool_integracion_continua.md)
+- [Frameworks y herramientas](./doc/Frameworks_herramientas.md)
 
 ## Descripción:
-Se propone desarrollar un sistema llamado "CityBike", este sistema consiste en un sistema de gestión de bicicletas de alquiler en la ciudad. En este sistema un gestor podrá organizar todo lo relacionado con el alquiler de las mismas a través de la nube.
+Hoy en día el cambio climático supone un serio problema y una de las causas de este problema es la movilidad urbana. Una solución a este problema consiste en la utilización de transportes limpios, como la bicicleta, en la ciudad. Sin embargo, hay que proveer a la población de dichas bicicletas, para ello cada vez más se ven en las ciudades estaciones de alquiler de bicicletas. Este servicio permite al cliente alquilar durante una determinada distancia o tiempo una bicicleta, la cual deberá ser devuelta a una estación tras su uso.
+Para poder llevar a cabo toda esta actividad se necesita un sistema de gestión. Se propone desarrollar un sistema llamado "CityBike" para realizar esta actividad. Este sistema se propone realizar una gestión centralizada de todo lo relacionado con los servicios de alquiler de bicicletas en una ciudad facilitando así todo el trabajo de gestión a través de la nube.
 
 ## Arquitectura
 
-Este sistema se implementará siguiendo una arquitectura basada en microservicios. Para mas información acerca de los diferentes microservicios y componentes del sistema se puede consultar la [página](doc/arquitectura.md) destinada a tal efecto.
+Este sistema se implementará siguiendo una arquitectura basada en microservicios. Para más información acerca de los diferentes microservicios y componentes del sistema se puede consultar la [página](doc/arquitectura.md) destinada a tal efecto.
 
 Por otra parte, se ha realizado un estudio de las diferentes entidades que formaran parte de este problema. Estas entidades surgen del [análisis](./doc/DDD_analisis.md) basado en el diseño guiado por el dominio (DDD, [Domain-Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design)).
-
-Hay que destacar que el lenguaje que se utilizará para la realización de este proyecto, será [Python](https://www.python.org/) por la gran cantidad de facilidades que nos ofrece en cuanto a módulos y a herramientas se refiere.
 
 ## Herramienta de construcción
 
@@ -32,8 +33,6 @@ Como herramienta de construcción utilizaremos la ampliamente conocida [make](ht
 
 ## Tests y herramientas de integración continua
 
-Para poder llevar un correcto control del proyecto se han desarrollado varios tests sobre los microservicios implementados. Esto permitirá comprobar que el sistema funciona correctamente después de realizar algún cambio. Para realizar estas comprobaciones se ha elegido utilizar el método de integración continua en la nube. De esta forma se crearan entornos virtuales en la nube donde se ejecutará el sistema en varias versiones de Python.
+Para poder llevar un correcto control del proyecto se han desarrollado varios tests sobre los microservicios implementados. Esto permitirá comprobar que el sistema funciona correctamente después de realizar algún cambio. Para realizar estas comprobaciones se ha elegido utilizar el método de integración continua en la nube. De esta forma se crearán entornos virtuales en la nube donde se ejecutará el sistema en varias versiones de Python.
 
-Las herramientas de integración continua que se han utilizado son [travis](https://travis-ci.org/) y [CircleCI](https://circleci.com/). Se han elegido debido al conocimiento sobre travis del que ya disponía y debido a la facilidad que ambas nos ofrecen.
-
-Por otro lado, también se ha integrado una herramienta de cobertura de código, esta es [codecov](https://codecov.io/). Esta herramienta nos permitirá comprobar cual es el porcentaje de código cubierto por nuestros tests.
+Las herramientas de integración continua que se han utilizado son [travis](https://travis-ci.org/) y [CircleCI](https://circleci.com/). Para saber sobre estas herramientas y como se han incluido en el proyecto, se puede consultar el enlace del indice a la sección correspondiente o a traves de este [enlace](./doc/buildtool_integracion_continua.md)
