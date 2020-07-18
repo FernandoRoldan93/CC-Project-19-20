@@ -6,7 +6,7 @@ install:
 	pipenv install --three
 	#Dentro de dicho entorno, instalamos todos los paquetes definidos en el archivo
 	#requirements.txt
-	pipenv run pip3 install -r requirements.txt
+	pipenv run pip install -r requirements.txt
 
 #Realización de tests
 test:
