@@ -1,7 +1,7 @@
 #Instalación de todos los paquetes necesarios.
 install:
 	#Instalación de la herrmienta de creación de entornos virtuales de Python
-	pip3 install pipenv
+	pip install pipenv
 	#Instalacion y creación de un entorno virtual.
 	pipenv install --three
 	#Dentro de dicho entorno, instalamos todos los paquetes definidos en el archivo
