@@ -35,4 +35,8 @@ Como herramienta de construcción utilizaremos la ampliamente conocida [make](ht
 
 Para poder llevar un correcto control del proyecto se han desarrollado varios tests sobre los microservicios implementados. Esto permitirá comprobar que el sistema funciona correctamente después de realizar algún cambio. Para realizar estas comprobaciones se ha elegido utilizar el método de integración continua en la nube. De esta forma se crearán entornos virtuales en la nube donde se ejecutará el sistema en varias versiones de Python.
 
-Las herramientas de integración continua que se han utilizado son [travis](https://travis-ci.org/) y [CircleCI](https://circleci.com/). Para saber sobre estas herramientas y como se han incluido en el proyecto, se puede consultar el enlace del indice a la sección correspondiente o a traves de este [enlace](./doc/buildtool_integracion_continua.md)
+Las herramientas de integración continua que se han utilizado son [travis](https://travis-ci.org/) y [CircleCI](https://circleci.com/). Para saber sobre estas herramientas y como se han incluido en el proyecto, se puede consultar el enlace del índice a la sección correspondiente o a través de este [enlace](./doc/buildtool_integracion_continua.md)
+
+## Frameworks, herramientas y lenguaje a utilizar
+
+Una vez conocemos las entidades y arquitectura del sistema podemos comenzar a hablar de las diferentes herramientas que vamos a utilizar para llevar a cabo nuestro proyecto. Estas herramientas y frameworks hacen referencia a partes del sistema como lo son el almacén de datos o el mecanismo de logging a usar. Toda esta información se puede encontrar en el documento destinado a tal efecto, el cual se puede encontrar [aquí](./doc/Frameworks_herramientas.md)
