@@ -25,7 +25,9 @@ Por otra parte, se ha realizado un estudio de las diferentes entidades que forma
 
     buildtool: Makefile
 
-Como herramienta de construcción utilizaremos la ampliamente conocida [make](https://www.gnu.org/software/make/). Esta herramienta nos permitirá, a través del fichero [Makefile](./Makefile), realizar varias opciones de forma automática. Para este propósito se han definido 2 comandos que se ejecutaran utilizando las siguientes ordenes:
+Como herramienta de construcción utilizaremos la ampliamente conocida [Make](https://www.gnu.org/software/make/). La elección de esta herramienta y no de otras herramientas de construcción como [Scons](https://github.com/SCons/scons), se debe principalmente a que ya disponia de conocimientos de esta herramienta y aunque Scons es tremendamente facil de usar, se encuentra menos extendida que Make. Ademas de esto, esta última herramienta ofrece todas las utilidades que necesitaremos en el proyecto de forma muy simple.
+
+En cuanto a las utilidades que ofrece Make, esta herramienta nos permitirá, a través del fichero [Makefile](./Makefile), realizar varias opciones de forma automática como son la instalación y el testeo de los microservicios desarrollados. Para este propósito se han definido 2 comandos que se ejecutaran utilizando las siguientes ordenes:
 
 `make install` o `make`: Cualquiera de estas dos ordenes crearan un entorno virtual de Python e instalarán en el las dependencias necesarias.
 
