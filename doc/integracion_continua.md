@@ -1,16 +1,3 @@
-# Herramienta de construcción
-
-Para poder controlar la ejecución de los módulos o la instalación de los paquetes necesarios del sistema, necesitaremos una herramienta de construcción. En este caso, utilizaremos la ampliamente conocida [make](https://www.gnu.org/software/make/). Esta herramienta nos permitirá, a través del fichero [Makefile](../Makefile), definir una serie comandos que, asociados a una regla, se ejecutaran de forma sucesiva, haciendo así más clara y sencilla la ejecución del sistema de una forma correcta.
-
-Para ello, se han definido dos reglas:
-
-`make`: Instalación y creación de un entorno virtual de Python en el que se instalarán todos los paquetes necesarios para la ejecución del sistema.
-
-`make test`: En este caso, esta regla nos sirve para ejecutar los tests sobre el sistema creado.
-
-Mas adelante se añadirán reglas que solventen las diferentes necesidades que surjan en el sistema.
-
-
 # Integración continua
 
 Una buena práctica a la hora de realizar un sistema en la nube consiste en la utilización de herramientas de integración continua. Estas herramientas permitirán realizar test de integración para que cada vez que se realice un cambio en la aplicación podamos detectar los posibles fallos lo antes posible. Hoy en día podemos encontrar una gran variedad de herramientas de integración continua, como pueden ser [Jenkins](https://jenkins.io/) o [travis-ci](https://travis-ci.org/). En este caso, las herramientas que se han elegido son Travis-CI y [CircleCI](https://circleci.com/). Se han elegido debido al conocimiento sobre Travis del que ya disponía y a la facilidad que ambas nos ofrecen. Además de lo antes mencionado, también son ampliamente utilizadas en el ámbito del "Cloud Computing", lo que nos asegurará que hay gran cantidad de manuales y soluciones a posibles problemas.
