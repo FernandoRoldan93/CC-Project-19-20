@@ -8,7 +8,6 @@
 ## Indice General
 - [Entidades del sistema](./doc/DDD_analisis.md)
 - [Arquitectura](./doc/arquitectura.md)
-- [Herramienta de construcción](./doc/buildtool.md)
 - [Integración continua](./doc/integracion_continua.md)
 - [Frameworks y herramientas](./doc/Frameworks_herramientas.md)
 
@@ -45,8 +44,6 @@ Mediante la ejecución de esta orden se instalarán primero todas las dependenci
 
 	make test
 En este caso, se ejecutarán todos los test del proyecto. Por un lado se realizan los tests unitarios con [pytest](https://pypi.org/project/pytest/) y más tarde se realizarán los test de cobertura con [codecov](https://docs.codecov.io/docs). La cobertura de código puede consultarse en el badge destinado a tal efecto de esta página o mediante este [enlace](https://codecov.io/gh/FernandoRoldan93/CC-Project).
-
-Esta información puede ser consultada tambien en el documento elaborado a tal efecto al cual se puede acceder desde el índice o desde [aquí](./doc/buildtool.md)
 
 ---
 
