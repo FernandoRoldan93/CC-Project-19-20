@@ -7,14 +7,29 @@ python:
  - "3.7"
  - "3.8"
 
-# Instalamos las dependencias necesarias para la realización de los test mediante
-# la herramienta de construcción
+# Instalamos las dependencias necesarias mediante el gestor de tareas de travis o mediante la herramienta de construcción
 install:
- - make install
+ # Gestor de tareas de travis
+ # ---------------------------
+ - pip install pipenv
+ - pipenv install --three
+ - pipenv run pip install -r requirements.txt
 
-# Ejecución de los test y test de cobertura mediante la herramienta de construcción
+ # Herramienta de construcción del proyecto
+ # ---------------------------
+ #- make install
+
+
+# Ejecución de los test y test de cobertura mediante el gestor de tareas de travis o mediante la herramienta de construcción 
 script:
- make test
+ # Gestor de tareas de travis
+ # ---------------------------
+ - pipenv run python -m pytest tests/test_bicicletas.py
+ - pipenv run python -m pytest --cov=estacion --cov=bicicletas tests/
+ 
+ # Herramienta de construcción del proyecto
+ # ---------------------------
+ #- make test
 
 #Tras la realización de los test de cobertura enviamos los resultados a codecov.
 after_success:
