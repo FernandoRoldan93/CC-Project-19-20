@@ -55,16 +55,14 @@ class StationBD:
 
         return any(bici.ID == bicicleta_id for bici in estacion.bicis)
 
-""" Hay que cambiar esto aun, no esta bien, decidir que parametros usar en ambas funciones
-    def depositar_bicicleta(self, estacion_id, bicicleta_id):
+    def depositar_bicicleta(self, estacion, bicicleta):
         mensaje = ""
-        station = get_estacion_by_id(estacion_id)
 
         if station.puestos_libres > 0:
-            if check_bici_almacenada(estacion_id, bicicleta_id) == True:
+            if check_bici_almacenada(estacion.id, bicicleta.ID) == True:
                 mensaje = "Ya hay una bicicleta con ese ID almacenada"
             else:
-                station.bicis.append(bicicleta)
+                estacion.bicis.append(bicicleta)
                 bicicleta.set_ocupada(False)
                 self.puestos_libres -=1
                 mensaje = "Bicicleta depositada con exito"
@@ -73,21 +71,19 @@ class StationBD:
 
         return mensaje
 
-    def retirar_bicicleta(self, bicicleta_id, estacion_id, usuario):
+    def retirar_bicicleta(self, bicicleta, estacion, usuario):
         mensaje = ""
-        station = get_estacion_by_id(estacion_id)
         if self.check_bici_almacenada(bicicleta) == False:
             mensaje = "La bicicleta no se encuentra en esta estación"
-        elif usuario == None or usuario == "":
+        elif usuario == None or usuario == "" or not isinstance(usuario, str):
             mensaje = "Usuario no valido"
         else:
-            self.bicicletas_estacionadas[bicicleta.id] = bicicleta
+            estacion.bicis.remove(bicicleta)
             self.puestos_libres += 1
             bicicleta.set_ocupada(True)
             bicicleta.add_ultimo_usuario(usuario)
             mensaje = "Bicicleta retirada con exito"
-
         return mensaje
-"""
+
     def get_puestosLibres(self):
         return self.nPuestos

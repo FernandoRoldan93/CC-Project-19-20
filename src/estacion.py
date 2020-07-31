@@ -43,7 +43,6 @@ class Estacion:
 
     def retirar_bicicleta(self, bicicleta, usuario):
         mensaje = ""
-
         if self.check_bici_almacenada(bicicleta) == False:
             mensaje = "La bicicleta no se encuentra en esta estación"
         elif usuario == None or usuario == "" or not isinstance(usuario, str):
