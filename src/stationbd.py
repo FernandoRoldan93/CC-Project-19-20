@@ -4,8 +4,8 @@
 
 """
 from bicicletas import Bicicletas
-from estacoin import Estacion
-class Estaciones:
+from estacion import Estacion
+class StationBD:
 
     def __init__(self):
         self.estaciones = []
