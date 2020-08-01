@@ -6,66 +6,42 @@
 import sys
 sys.path.append('src/')
 
-from bicicletas import Bicicleta
-from estacion import Estacion
+from bikebd import BikeBD
+from bicicleta import Bicicleta
 
-""" Test 1: Tras retirar una bicicleta, esta queda ocupada"""
-def test_bici_ocupada():
-    bici = Bicicleta(1,2010)
-    estac = Estacion(1, "Gonzalo Gallas", 1)
-    estac.depositar_bicicleta(bici)
-    estac.retirar_bicicleta(bici, "Fernando")
-    assert bici.get_ocupada() == True
+""" Test 1: Tras añadir una bici esta queda registrada"""
+def test_existe_bici():
+    bicis_bd = BikeBD()
+    bicis_bd.aniadir_bici(1, 2020)
+    assert bicis_bd.exists_id(1) == True
 
+""" Test 2: No se puede añadir dos veces la misma bicicleta"""
+def test_bici_repetida():
+    bicis_bd = BikeBD()
+    result = bicis_bd.aniadir_bici(1, 2020)
+    result1 = bicis_bd.aniadir_bici(1, 2019)
+    assert result == "Bici añadida con exito :D" and \
+    result1 == "Ya existe una bici con ese ID, no se puede añadir :("
 
-""" Test 2: Para depositar una bicicleta en una estacion ha de haber huecos libres"""
-def test_depositar_bici():
-    bici = Bicicleta(1, 2010)
-    bici1 = Bicicleta(2, 2010)
-    estac = Estacion(1, "Gonzalo Gallas", 1)
-    estac.depositar_bicicleta(bici)
-    assert estac.depositar_bicicleta(bici1) == "No cogen mas bicicletas en esta estación"
-
-""" Test 3: No se puede sacar una bicicleta de una estación en la cual no esta esa bicicleta """
-def test_sacar_bici():
-    bici = Bicicleta(1,2010)
-    usuario = "Fernando"
-    estac = Estacion(1, "Gonzalo Gallas", 1)
-    assert estac.retirar_bicicleta(bici, usuario) == "La bicicleta no se encuentra en esta estación"
-
+""" Test 3: Para depositar una bicicleta en una estacion ha de haber huecos libres"""
+def test_bici_id():
+    bicis_bd = BikeBD()
+    bicis_bd.aniadir_bici(1, 2020)
+    bici1 = bicis_bd.get_bici_by_id(1)
+    bici1_index= bicis_bd.get_bici_index(1)
+    assert bici1 is bicis_bd.bicicletas[bici1_index]
 
 """ Test 4: Al retirar una bicicleta se ha de especificar un usuario no nulo """
-def test_usuario_no_nulo():
-    bici = Bicicleta(1,2010)
-    estac = Estacion(1, "Gonzalo Gallas", 1)
-    estac.depositar_bicicleta(bici)
-    assert estac.retirar_bicicleta(bici, None) == "Usuario no valido"
+def test_usuario_no_valido():
+    bicis_bd = BikeBD()
+    bicis_bd.aniadir_bici(1, 2020)
+    bicis_bd.add_ultimo_usuario(1, "")
+    error = "Se ha de especificar un usuario valido"
+    assert bicis_bd.add_ultimo_usuario(1, "") == error and bicis_bd.add_ultimo_usuario(1, None) == error
 
-
-""" Test 5: No se puede almacenar una misma bicicleta 2 veces en la misma estación """
-def test_no_repetir_bicicleta():
-    bici = Bicicleta(1,2010)
-    estac = Estacion(1, "Gonzalo Gallas", 2)
-    estac.depositar_bicicleta(bici)
-    assert estac.depositar_bicicleta(bici) == "No se puede almacenar una bicicleta con el mismo id que otra"
-
-
-""" Test 6: No se puede retirar una bicicleta de una estación en la que no esta """
-def test_retirar_bicicleta_otra_estacion():
-    bici = Bicicleta(1,2010)
-    bici1 = Bicicleta(2, 2010)
-    estac = Estacion(1, "Gonzalo Gallas", 2)
-    estac.depositar_bicicleta(bici)
-    assert estac.retirar_bicicleta(bici1, "asd") == "La bicicleta no se encuentra en esta estación"
-
-""" Test 7: Tras retirar una bicicleta, el usuario queda registrado."""
-
-def test_usuario_retira():
-    bici = Bicicleta(1,2010)
-    estac = Estacion(1, "Gonzalo Gallas", 2)
-    estac.depositar_bicicleta(bici)
-    usuario = "Fernando"
-    mensaje = estac.retirar_bicicleta(bici, usuario)
-    usuarios = bici.get_ultimos_usuarios()
-    print(mensaje)
-    assert usuarios[-1] == "Fernando"
+""" Test 5:Los usuarios se almacenan correctamente en la lista de ultimos usuarios de las bicicletas"""
+def test_guarda_usuario():
+    bicis_bd = BikeBD()
+    bicis_bd.aniadir_bici(1, 2020)
+    result = bicis_bd.add_ultimo_usuario(1, "Fernando")
+    assert "Fernando" in bicis_bd.get_ultimos_usuarios(1)
