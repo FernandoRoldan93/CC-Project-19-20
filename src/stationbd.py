@@ -3,14 +3,15 @@
 @author: Fernando Roldán
 
 """
-from bicicletas import Bicicletas
+from bikebd import BikeBD
 from estacion import Estacion
 class StationBD:
 
     def __init__(self):
         self.estaciones = []
 
-    def aniadir_estacion(self, nueva_estacion):
+    def aniadir_estacion(self, id, direccion, nPuestos):
+        nueva_estacion = Estacion(id, direccion, nPuestos)
         if datos_correctos(nueva_estacion) and self.valid_ID(nueva_estacion.id): self.estaciones.append(estacion)
         return
 
@@ -24,7 +25,7 @@ class StationBD:
 
     def check_data_types(self, estacion):
         valid = False
-        if isinstance(estacion.ID, str) and isinstance(estacion.direccion, str) and isinstance(estacion.nPuestos, str)
+        if isinstance(estacion.ID, str) and isinstance(estacion.direccion, str) and isinstance(estacion.nPuestos, str) \
             and isinstance(estacion.puestos_libres, str) and isinstance(estacion.bicis, list):
                 valid = true
 
@@ -54,7 +55,7 @@ class StationBD:
 
         return any(bici.ID == bicicleta_id for bici in estacion.bicis)
 
-
+""" Hay que cambiar esto aun, no esta bien, decidir que parametros usar en ambas funciones
     def depositar_bicicleta(self, estacion_id, bicicleta_id):
         mensaje = ""
         station = get_estacion_by_id(estacion_id)
@@ -72,8 +73,9 @@ class StationBD:
 
         return mensaje
 
-    def retirar_bicicleta(self, bicicleta, usuario):
+    def retirar_bicicleta(self, bicicleta_id, estacion_id, usuario):
         mensaje = ""
+        station = get_estacion_by_id(estacion_id)
         if self.check_bici_almacenada(bicicleta) == False:
             mensaje = "La bicicleta no se encuentra en esta estación"
         elif usuario == None or usuario == "":
@@ -86,6 +88,6 @@ class StationBD:
             mensaje = "Bicicleta retirada con exito"
 
         return mensaje
-
+"""
     def get_puestosLibres(self):
         return self.nPuestos

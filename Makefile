@@ -10,7 +10,8 @@ install:
 
 #Realización de tests
 test:
-	#Test de la clase "bicicletas"
-	pipenv run python -m pytest tests/test_bicicletas.py
+	#Testeo de todas las clases
+	pipenv run python -m pytest tests/*
+
 	#Test de cobertura de la clase estacion y bicicletas
 	pipenv run python -m pytest --cov=estacion --cov=bicicletas tests/
