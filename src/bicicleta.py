@@ -31,6 +31,7 @@ class Bicicleta:
         return self.__ultimos_usuarios
 
     def __str__(self):
-        output = f"id = {self.id} ; fecha_alta = {self.fecha_alta} ; Disponible = {self.disponible} ; ultimos_usuarios = {self.__ultimos_usuarios}"
+        output = f"id = {self.id} ; fecha_alta = {self.fecha_alta} ; Disponible = {self.disponible};"
+         + f"ultimos_usuarios = {self.__ultimos_usuarios}"
 
         return output
