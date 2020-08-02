@@ -17,7 +17,6 @@ class StationBD:
             return "Estacion añadida"
         else:
             return "Datos no validos"
-        return
 
     def valid_ID(self, ID):
         valid = True
