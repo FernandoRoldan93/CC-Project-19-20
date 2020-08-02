@@ -1,6 +1,6 @@
 #Instalación de todos los paquetes necesarios.
 install:
-	#Instalación de la herrmienta de creación de entornos virtuales de Python
+	#Instalación de la herramienta de creación de entornos virtuales de Python
 	pip install pipenv
 	#Instalacion y creación de un entorno virtual.
 	pipenv install --three
@@ -10,8 +10,10 @@ install:
 
 #Realización de tests
 test:
-	#Testeo de todas las clases
-	pipenv run python -m pytest tests/*
+	#Testeo de las clases de estacion
+	pipenv run python -m pytest tests/test_estacion.py
+	#Testeo de las clases de bicicleta
+	pipenv run python -m pytest tests/test_bicicletas.py
 
 	#Test de cobertura de la clase estacion y bicicletas
-	pipenv run python -m pytest --cov=estacion --cov=bicicletas tests/
+	pipenv run python -m pytest --cov=estacion --cov=bicicleta --cov=stationbd --cov=bikebd tests/

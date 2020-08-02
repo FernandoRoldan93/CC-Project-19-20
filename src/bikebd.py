@@ -15,7 +15,7 @@ class BikeBD:
     def exists_id(self, id):
         exists = False
         for bici in self.bicicletas:
-            if bici.ID == id:
+            if bici.id == id:
                 exists = True
         return exists
 
@@ -33,7 +33,7 @@ class BikeBD:
         result = None
         if self.exists_id(id):
             for bici in self.bicicletas:
-                if bici.ID == id:
+                if bici.id == id:
                     result = bici
         if result == None:
             return "No existe esa bicicleta"

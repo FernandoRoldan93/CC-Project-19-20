@@ -12,38 +12,37 @@ class StationBD:
 
     def aniadir_estacion(self, id, direccion, nPuestos):
         nueva_estacion = Estacion(id, direccion, nPuestos)
-        if datos_correctos(nueva_estacion) and self.valid_ID(nueva_estacion.id): self.estaciones.append(estacion)
+        if self.datos_correctos(nueva_estacion):
+            self.estaciones.append(nueva_estacion)
+            return "Estacion añadida"
+        else:
+            return "Datos no validos"
         return
 
     def valid_ID(self, ID):
         valid = True
         for estacion in self.estaciones:
-            if estacion.ID == ID:
+            if estacion.id == ID:
                 valid = False
 
         return valid
 
     def check_data_types(self, estacion):
         valid = False
-        if isinstance(estacion.ID, str) and isinstance(estacion.direccion, str) and isinstance(estacion.nPuestos, str) \
-            and isinstance(estacion.puestos_libres, str) and isinstance(estacion.bicis, list):
-                valid = true
-
+        if isinstance(estacion.id, int) and isinstance(estacion.direccion, str) and isinstance(estacion.nPuestos, int):
+                valid = True
         return valid
 
     def datos_correctos(self, datos_estacion):
         valid = False
-
-        if self.valid_ID(datos_estacion.ID):
-            if check_data_types(datos_estacion):
-                valid = True
-
+        if self.valid_ID(datos_estacion.id) and self.check_data_types(datos_estacion):
+            valid = True
         return valid
 
     def get_estacion_by_id(self, id):
         result = None
-        for estacion in estaciones:
-            if id == estacion.ID:
+        for estacion in self.estaciones:
+            if id == estacion.id:
                 result = estacion
 
         return result
@@ -51,38 +50,16 @@ class StationBD:
 
     """comprueba si una bici esta almacenada en esta estacion"""
     def check_bici_almacenada(self, estacion_id, bicicleta_id):
-        estacion = get_estacion_by_id()
+        estacion = self.get_estacion_by_id()
 
-        return any(bici.ID == bicicleta_id for bici in estacion.bicis)
+        return any(bici.id == bicicleta_id for bici in estacion.bicis)
 
     def depositar_bicicleta(self, estacion, bicicleta):
-        mensaje = ""
-
-        if station.puestos_libres > 0:
-            if check_bici_almacenada(estacion.id, bicicleta.ID) == True:
-                mensaje = "Ya hay una bicicleta con ese ID almacenada"
-            else:
-                estacion.bicis.append(bicicleta)
-                bicicleta.set_ocupada(False)
-                self.puestos_libres -=1
-                mensaje = "Bicicleta depositada con exito"
-        else:
-            mensaje = "No cogen mas bicicletas en esta estación"
-
+        mensaje = estacion.depositar_bicicleta(bicicleta)
         return mensaje
 
-    def retirar_bicicleta(self, bicicleta, estacion, usuario):
-        mensaje = ""
-        if self.check_bici_almacenada(bicicleta) == False:
-            mensaje = "La bicicleta no se encuentra en esta estación"
-        elif usuario == None or usuario == "" or not isinstance(usuario, str):
-            mensaje = "Usuario no valido"
-        else:
-            estacion.bicis.remove(bicicleta)
-            self.puestos_libres += 1
-            bicicleta.set_ocupada(True)
-            bicicleta.add_ultimo_usuario(usuario)
-            mensaje = "Bicicleta retirada con exito"
+    def retirar_bicicleta(self, estacion, bicicleta, usuario):
+        mensaje = estacion.retirar_bicicleta(bicicleta, usuario)
         return mensaje
 
     def get_puestosLibres(self):

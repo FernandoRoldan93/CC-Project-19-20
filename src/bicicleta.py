@@ -5,7 +5,7 @@
 
 class Bicicleta:
     def __init__(self, id, fecha_alta):
-            self.ID = id
+            self.id = id
             self.fecha_alta = fecha_alta
             self.disponible = True
             self.__ultimos_usuarios = []
@@ -31,6 +31,6 @@ class Bicicleta:
         return self.__ultimos_usuarios
 
     def __str__(self):
-        output = f"ID = {self.ID} ; fecha_alta = {self.fecha_alta} ; Disponible = {self.disponible} ; ultimos_usuarios = {self.__ultimos_usuarios}"
+        output = f"id = {self.id} ; fecha_alta = {self.fecha_alta} ; Disponible = {self.disponible} ; ultimos_usuarios = {self.__ultimos_usuarios}"
 
         return output

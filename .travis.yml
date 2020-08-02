@@ -20,13 +20,14 @@ install:
  #- make install
 
 
-# Ejecución de los test y test de cobertura mediante el gestor de tareas de travis o mediante la herramienta de construcción 
+# Ejecución de los test y test de cobertura mediante el gestor de tareas de travis o mediante la herramienta de construcción
 script:
  # Gestor de tareas de travis
  # ---------------------------
+ - pipenv run python -m pytest tests/test_estacion.py
  - pipenv run python -m pytest tests/test_bicicletas.py
- - pipenv run python -m pytest --cov=estacion --cov=bicicletas tests/
- 
+ - pipenv run python -m pytest --cov=estacion --cov=bicicleta --cov=stationbd --cov=bikebd tests/
+
  # Herramienta de construcción del proyecto
  # ---------------------------
  #- make test
