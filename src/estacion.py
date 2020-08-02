@@ -52,16 +52,3 @@ class Estacion:
             bicicleta.add_ultimo_usuario(usuario)
             mensaje = "Bicicleta retirada con exito"
         return mensaje
-
-Bicis_BD = BikeBD()
-Bicis_BD.aniadir_bici(1,22)
-Bicis_BD.add_ultimo_usuario(1, "Fernando")
-
-"""
-Estacion_BD = StationBD()
-Estacion_BD.aniadir_estacion(1, "calle tal", 2)
-bici = Bicis_BD.get_bici_by_id(1)
-Estacion_BD.depositar_bicicleta(1, 1)
-Estacion_BD.retirar_bicicleta(1)
-estacion.retirar_bicicleta(bici, "Fernando")
-"""
