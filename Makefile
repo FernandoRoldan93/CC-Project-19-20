@@ -17,3 +17,10 @@ test:
 
 	#Test de cobertura de la clase estacion y bicicletas
 	pipenv run python -m pytest --cov=estacion --cov=bicicleta --cov=stationbd --cov=bikebd tests/
+
+#Levantar Microservicios
+start:
+	pipenv run gunicorn --chdir src estacion_rest:app -b :${PORT} -p pid_estaciones.pid --daemon
+
+stop:
+	pipenv run kill `cat src/pid_estaciones.pid`
