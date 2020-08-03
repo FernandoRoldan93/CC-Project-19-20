@@ -6,22 +6,52 @@
 import os
 import json
 from stationbd import StationBD
+from bikebd import BikeBD
 from flask import Flask, Response, request
+import random
 
 app = Flask(__name__)
 estaciones = StationBD()
+bicicletas = BikeBD()
 
 def estacion_to_dict(estacion):
     estacion_dictionary = {
-    "id": estacion.id,
-    "Direccion": estacion.direccion,
-    "Numero de puestos": estacion.nPuestos,
-    "Numero de puestos libres": estacion.puestos_libres
+        "id": estacion.id,
+        "Dirección": estacion.direccion,
+        "Número de puestos": estacion.nPuestos,
+        "Número de puestos libres": estacion.puestos_libres,
+        "Bicicletas": tuple(bicicletas_to_dict(estacion.bicis))
     }
     return estacion_dictionary
 
-def bicicleta_to_dict(bicicleta):
-    raise NotImplementedError
+def bicicletas_to_dict(bicicletas):
+    bicis_list = []
+    for bici in bicicletas:
+        bici_dict = {}
+        bici_dict = {
+            "id": bici.id,
+            "Fecha de alta": bici.fecha_alta,
+            "Disponible": bici.disponible,
+            "Ultimos usuarios": tuple(bici.get_ultimos_usuarios())
+        }
+        bicis_list.append(bici_dict)
+    return bicis_list
+
+@app.route("/test_data")
+def test_data():
+    estaciones.aniadir_estacion(1, "Gonzalo Gallas", 3)
+    estaciones.aniadir_estacion(2, "Facultad Informatica", 6)
+    nombres = ["Paco", "Juan", "Javier", "Fernando", "Pablo", "Ruben"]
+    for i in range(1, 10):
+        bicicletas.aniadir_bici(i, 2020)
+        for x in range(1, random.randint(2,4)):
+            bicicletas.add_ultimo_usuario(i, nombres[random.randint(0,5)])
+    for i in range(1,3):
+        estaciones.depositar_bicicleta(estaciones.get_estacion_by_id(1),bicicletas.get_bici_by_id(i))
+    for i in range(4,10):
+        estaciones.depositar_bicicleta(estaciones.get_estacion_by_id(2),bicicletas.get_bici_by_id(i))
+    return "Datos cargados con exito"
+
 
 @app.route("/", methods=['GET'])
 def index():
@@ -39,3 +69,7 @@ def get_estacion(id):
         return Response(json.dumps(estac_dict), status=200, mimetype="application/json")
     else:
         return "No hay ninguna estacion con ese ID"
+
+@app.route("/retirar_bici/<int:id>", methods=['GET'])
+def retirar_bicicleta(estacion, bicicleta):
+    return "Funcion no implementada aún"
