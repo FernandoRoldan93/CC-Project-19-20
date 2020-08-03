@@ -3,7 +3,7 @@ install:
 	#Instalación de la herramienta de creación de entornos virtuales de Python
 	pip install pipenv
 	#Instalacion y creación de un entorno virtual.
-	pipenv install --three
+	pipenv install --python 3.7
 	#Dentro de dicho entorno, instalamos todos los paquetes definidos en el archivo
 	#requirements.txt
 	pipenv run pip install -r requirements.txt
