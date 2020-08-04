@@ -29,10 +29,7 @@ def bicicletas_to_dict(bicicletas):
     for bici in bicicletas:
         bici_dict = {}
         bici_dict = {
-            "id": bici.id,
-            "Fecha de alta": bici.fecha_alta,
-            "Disponible": bici.disponible,
-            "Ultimos usuarios": tuple(bici.get_ultimos_usuarios())
+            "id": bici.id
         }
         bicis_list.append(bici_dict)
     return bicis_list
@@ -69,6 +66,17 @@ def get_estacion(id):
         return Response(json.dumps(estac_dict), status=200, mimetype="application/json")
     else:
         return "No hay ninguna estacion con ese ID"
+
+@app.route("/all_estaciones", methods=['GET'])
+def get_all_estaciones():
+    result = []
+    for estacion in estaciones.estaciones:
+        estac = {}
+        estac = estacion_to_dict(estacion)
+        result.append(estac)
+    return Response(json.dumps(result), status=200, mimetype="application/json")
+
+
 
 @app.route("/retirar_bici/<int:id>", methods=['GET'])
 def retirar_bicicleta(estacion, bicicleta):

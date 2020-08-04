@@ -29,10 +29,3 @@ class Bicicleta:
 
     def get_ultimos_usuarios(self):
         return self.__ultimos_usuarios
-
-"""
-    def __str__(self):
-        output = f"id = {self.id} ; fecha_alta = {self.fecha_alta} ; Disponible = {self.disponible}"
-
-        return output
-"""
