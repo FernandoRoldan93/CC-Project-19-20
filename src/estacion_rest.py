@@ -60,6 +60,7 @@ def aniadir_estacion(id, dir, n_puestos):
     if result == "Estacion añadida":
         return Response("Estacion añadida", status = 200)
     else:
+        print(result)
         return Response("Datos no validos", status = 400)
 
 @app.route("/estacion/<int:id>", methods=['GET'])
@@ -82,3 +83,11 @@ def get_all_estaciones():
         return Response("No hay ninguna estacion",status=204)
     else:
         return Response(json.dumps(result), status=200, mimetype="application/json")
+
+@app.route("/borrar_estacion/<int:id>", methods=['GET'])
+def borrar_estacion(id):
+    result = estaciones.eliminar_estacion(id)
+    if result == "Esa estacion no existe, no se hace nada":
+        return Response("Esa estacion no existe", status=400)
+    else:
+        return Response("Eliminada", status=200)
