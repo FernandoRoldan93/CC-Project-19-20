@@ -3,7 +3,6 @@
 @author: Fernando Roldán
 
 """
-from bikebd import BikeBD
 from bicicleta import Bicicleta
 class Estacion:
     def __init__(self, id, direccion, nPuestos):

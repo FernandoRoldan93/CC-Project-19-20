@@ -56,7 +56,11 @@ def index():
 
 @app.route("/aniadir_estacion/<int:id>/<dir>/<int:n_puestos>", methods=['PUT'])
 def aniadir_estacion(id, dir, n_puestos):
-    return estaciones.aniadir_estacion(id, dir, n_puestos)
+    result = estaciones.aniadir_estacion(id, dir, n_puestos)
+    if result == "Estacion añadida":
+        return Response("Estacion añadida", status = 200)
+    else:
+        return Response("Datos no validos", status = 400)
 
 @app.route("/estacion/<int:id>", methods=['GET'])
 def get_estacion(id):
@@ -74,10 +78,7 @@ def get_all_estaciones():
         estac = {}
         estac = estacion_to_dict(estacion)
         result.append(estac)
-    return Response(json.dumps(result), status=200, mimetype="application/json")
-
-
-
-@app.route("/retirar_bici/<int:id>", methods=['GET'])
-def retirar_bicicleta(estacion, bicicleta):
-    return "Funcion no implementada aún"
+    if result == []:
+        return Response("No hay ninguna estacion",status=204)
+    else:
+        return Response(json.dumps(result), status=200, mimetype="application/json")

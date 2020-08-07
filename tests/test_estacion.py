@@ -95,5 +95,15 @@ def test_usuario_retira():
     usuario = "Fernando"
     estaciones.retirar_bicicleta(estac, bici, usuario)
     usuarios = bici.get_ultimos_usuarios()
-
     assert usuarios[-1] == "Fernando"
+
+""" Test 9: Al eliminar una estacion esta ya no se puede consultar """
+def test_eliminar_estacion():
+    estaciones = StationBD()
+    estaciones.aniadir_estacion(1, "Gonzalo Gallas", 1)
+    assert estaciones.eliminar_estacion(1) == "Eliminada"
+
+""" Test 10: No se puede eliminar una estacion que no existe """
+def test_intentar_eliminar_estacion():
+    estaciones = StationBD()
+    assert estaciones.eliminar_estacion(1) == "Esa estacion no existe, no se hace nada"

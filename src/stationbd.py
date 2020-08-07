@@ -46,7 +46,6 @@ class StationBD:
 
         return result
 
-
     """comprueba si una bici esta almacenada en esta estacion"""
     def check_bici_almacenada(self, estacion_id, bicicleta_id):
         estacion = self.get_estacion_by_id()
@@ -63,3 +62,11 @@ class StationBD:
 
     def get_puestosLibres(self):
         return self.nPuestos
+
+    def eliminar_estacion(self, id):
+        estacion = self.get_estacion_by_id(id)
+        if estacion == None:
+            return "Esa estacion no existe, no se hace nada"
+        else:
+            self.estaciones.remove(estacion)
+            return "Eliminada"
