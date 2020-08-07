@@ -23,15 +23,7 @@ def test_bici_repetida():
     assert result == "Bici añadida con exito :D" and \
     result1 == "Ya existe una bici con ese ID, no se puede añadir :("
 
-""" Test 3: Para depositar una bicicleta en una estacion ha de haber huecos libres"""
-def test_bici_id():
-    bicis_bd = BikeBD()
-    bicis_bd.aniadir_bici(1, 2020)
-    bici1 = bicis_bd.get_bici_by_id(1)
-    bici1_index= bicis_bd.get_bici_index(1)
-    assert bici1 is bicis_bd.bicicletas[bici1_index]
-
-""" Test 4: Al retirar una bicicleta se ha de especificar un usuario no nulo """
+""" Test 3: No se puede especificar un usuario no valido """
 def test_usuario_no_valido():
     bicis_bd = BikeBD()
     bicis_bd.aniadir_bici(1, 2020)
@@ -39,7 +31,7 @@ def test_usuario_no_valido():
     error = "Se ha de especificar un usuario valido"
     assert bicis_bd.add_ultimo_usuario(1, "") == error and bicis_bd.add_ultimo_usuario(1, None) == error
 
-""" Test 5:Los usuarios se almacenan correctamente en la lista de ultimos usuarios de las bicicletas"""
+""" Test 4:Los usuarios se almacenan correctamente en la lista de ultimos usuarios de las bicicletas"""
 def test_guarda_usuario():
     bicis_bd = BikeBD()
     bicis_bd.aniadir_bici(1, 2020)

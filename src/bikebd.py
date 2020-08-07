@@ -8,10 +8,6 @@ class BikeBD:
     def __init__(self):
         self.bicicletas = []
 
-    def get_bici_index(self, bicicleta_id):
-        bici = self.get_bici_by_id(bicicleta_id)
-        return self.bicicletas.index(bici)
-
     def exists_id(self, id):
         exists = False
         for bici in self.bicicletas:
