@@ -20,9 +20,10 @@ test:
 	# Test de cobertura de la clase estacion y bicicletas
 	pipenv run python -m pytest --cov=estacion --cov=bicicleta --cov=stationbd --cov=bikebd --cov=estacion_rest tests/
 
-# Levantar Microservicios
+# Levantar microservicio en servicio web de gunicorn
 start:
 	pipenv run gunicorn --chdir src estacion_rest:app -b :${PORT} -p pid_estaciones.pid --daemon
 
+# Parar el servicio web
 stop:
 	pipenv run kill `cat src/pid_estaciones.pid`
