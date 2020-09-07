@@ -29,6 +29,7 @@ script:
  - pipenv run python -m pytest tests/test_estacion_rest.py
  - pipenv run python -m pytest --cov=estacion --cov=bicicleta --cov=stationbd --cov=bikebd --cov=estacion_rest tests/
 
+
  # Herramienta de construcción del proyecto
  # ---------------------------
  #- make test
