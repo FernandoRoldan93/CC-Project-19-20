@@ -2,7 +2,6 @@
 """
 @author: Fernando Roldán
 """
-
 import os
 import json
 from stationbd import StationBD
