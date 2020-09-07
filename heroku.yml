@@ -1,0 +1,7 @@
+build:
+  docker:
+    # El servicio se construye a partir del Dockerfile de la carpeta raiz del proyecto
+    web: Dockerfile
+    # Como se ve en la documentacion, no es necesario añadir un comando run,
+    # se ejecutara el entrypoint del contenedor, el cual despliega el servicio
+    # Gunicorn
