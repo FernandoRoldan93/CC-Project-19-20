@@ -1,4 +1,4 @@
-# Establecemos la version base del contenedor.
+# Establecemos la version base del contenedor. (Estudio comparativo de imagenes base en la documentacion del proyecto)
 FROM python:3.7-slim-stretch
 
 # Definimos un argumento para la creacion del contenedor, este sera el puerto a traves del

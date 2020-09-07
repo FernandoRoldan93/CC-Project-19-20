@@ -19,5 +19,3 @@ Para realizar la prueba de estas imágenes se desplegará el contenedor con cada
 | buster       | 903 MB | 2161.19                      | 46.2 ms           | 0.463       |
 
 Llegados a este punto y viendo los resultados obtenidos en la tabla anterior, podemos observar que la mejor imagen para el proyecto es la imagen slim-stretch, tanto por su tamaño como por su rendimiento.
-
-## Despliegue en Docker Hub
